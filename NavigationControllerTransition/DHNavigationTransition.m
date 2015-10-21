@@ -86,6 +86,7 @@
     
     [transitionAnimation prepareForAnimationWithNavigationOperation:self.operation];
     
+#warning 用属性持有，不然会由于ARC机制，动画结束后这个对象就已经被释放了，而动画结束后还需要访问这个对象的属性
     self.transitionAnimation = transitionAnimation;
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:transitionAnimation.animationBlock completion:transitionAnimation.completionBlock];

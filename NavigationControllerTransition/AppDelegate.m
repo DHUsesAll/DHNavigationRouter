@@ -27,6 +27,7 @@
             
             DHNavigationTransition * transition = [[DHNavigationTransition alloc] initWithRootViewController:[ViewController new]];
             
+#warning 一定要用属性持有一次，否则ARC会释放这个对象，导致navigationController.delegate成为野指针
             self.transition = transition;
             
             window.rootViewController = transition.navigationController;
