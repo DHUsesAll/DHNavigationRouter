@@ -2,8 +2,6 @@
 自定义导航控制器的转场动画并实现可交互的转场，把两者封装到一起，使用起来异常简单。
 ![pic1](https://github.com/DHUsesAll/GitImages/blob/master/DHNavigationRouter/1.gif)
 
-![pic2](https://github.com/DHUsesAll/GitImages/blob/master/DHNavigationRouter/2.gif)
-
 #Usage:
             UIWindow * window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
             
