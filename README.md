@@ -2,7 +2,9 @@
 自定义导航控制器的转场动画并实现可交互的转场，把两者封装到一起，使用起来异常简单。
 ![pic1](https://github.com/DHUsesAll/GitImages/blob/master/DHNavigationRouter/1.gif)
 
-#Usage:
+## Usage:
+
+```objective-c
             UIWindow * window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
             
             DHNavigationTransition * transition = [[DHNavigationTransition alloc] initWithRootViewController:[ViewController new]];
@@ -11,9 +13,11 @@
             self.transition = transition;
             
             window.rootViewController = transition.navigationController;
-            
+```
 
-#顺便封装了一个转场动画，在协议里面使用：
+## 顺便封装了一个转场动画，在协议里面使用：
+
+```objective-c
             - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
             {
                 DHTransitionAnimation * transitionAnimation = [DHTransitionAnimation transitionAnimationWithTransitionContext:transitionContext];
@@ -26,3 +30,4 @@
                 [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:transitionAnimation.animationBlock completion:transitionAnimation.completionBlock];
                 
             }
+```
